@@ -9,6 +9,11 @@ export type MessagePropsType = {
 
 // нужно отобразить приходящие данные
 const Message = (props: MessagePropsType) => {
+
+    const id = props.message.id;
+    const user = {...props.message.user}
+
+
     return (
         <div id={'hw1-message-' + props.message.id} className={s.message}>
             <div className={s.imageAndText}>
