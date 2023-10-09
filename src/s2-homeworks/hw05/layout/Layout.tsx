@@ -1,6 +1,8 @@
-import React, { FC, ReactNode, useEffect, useState } from 'react'
-import { Header } from '../header/Header'
-import { Sidebar } from '../sidebar/Sidebar'
+import React, {FC, ReactNode, useEffect, useState} from 'react'
+import {Route, Routes} from 'react-router-dom'
+import {Header} from '../header/Header'
+import {Sidebar} from '../sidebar/Sidebar'
+import PreJunior from "../pages/PreJunior";
 
 type PropsType = {
     children: ReactNode
