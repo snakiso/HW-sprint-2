@@ -40,10 +40,11 @@ function Clock() {
 
     let day = date.toLocaleDateString('en-US', {weekday: 'long'});
     let month = date.toLocaleDateString('en-US', {month: 'long'});
-    let nowDate = date.toLocaleDateString('en-US', {day: 'numeric', month: 'numeric', year: 'numeric'});
+    let numericDay = date.getDate() < 10 ? `0${date.getDate()}` : date.getDay();
+    let numericMonth = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
 
     const stringTime = `${hour}:${minute}:${seconds}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = nowDate || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = `${numericDay}.${numericMonth}.${date.getFullYear()}`|| <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = day || <br/> // пишут студенты
