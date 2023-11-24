@@ -41,7 +41,6 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                console.log(e.response.data.info)
                 if (e.response.status === 400) {
                     setCode('Ошибка 400!')
                     setImage(error400)
@@ -55,10 +54,11 @@ const HW13 = () => {
                     setText(e.response.data.errorText)
                 }
                 if (e.response.status === 0) {
+                    console.log(e)
                     setCode('Error!')
                     setImage(errorUnknown)
-                    setInfo(e.response.data.info)
-                    setText(e.response.data.errorText)
+                    setInfo(e.name)
+                    setText(e.message)
                 }
             })
     }
